@@ -20,3 +20,58 @@ ALTER COLUMN Caracteristicas VARCHAR(1500);
 --  4. Exclusão de tipo de dado_ _ _ 
 ALTER TABLE raca
 DROP COLUMN perdido;
+
+-- 5. Inserção de Dados
+
+-- Habilidade
+INSERT INTO Habilidade (Nome, MultiplicadorPoder)
+VALUES ('Visão Aguçada', 2);
+
+INSERT INTO Habilidade (Nome, MultiplicadorPoder)
+VALUES ('Fúria', 3);
+
+INSERT INTO Habilidade (Nome, MultiplicadorPoder)
+VALUES ('Cura Mística', 4);
+
+
+-- Classe
+INSERT INTO Classe (Nome, Caracteristicas, IDHabilidade)
+VALUES ('Arqueiro', 'Especialista em ataques à distância.', 1);
+
+INSERT INTO Classe (Nome, Caracteristicas, IDHabilidade)
+VALUES ('Guerreiro', 'Especialista em combate corpo a corpo.', 2);
+
+INSERT INTO Classe (Nome, Caracteristicas, IDHabilidade)
+VALUES ('Mago', 'Especialista em magia.', 3);
+
+
+-- Raça
+INSERT INTO Raca (Nome, Descricao, Origem)
+VALUES ('Elfo', 'Raça ágil e habilidosa.', 'Floresta Encantada');
+
+INSERT INTO Raca (Nome, Descricao, Origem)
+VALUES ('Anão', 'Raça forte e resistente.', 'Montanhas Antigas');
+
+INSERT INTO Raca (Nome, Descricao, Origem)
+VALUES ('Humano', 'Raça versátil e adaptável.', 'Terras Antigas');
+
+
+-- Personagem
+INSERT INTO Personagem
+(Nome, Descricao, DataNascimento, IDRaca, IDClasse, Poder)
+VALUES ('Legolas', 'Arqueiro élfico.', '1995-05-10', 1, 1, 80);
+
+INSERT INTO Personagem
+(Nome, Descricao, DataNascimento, IDRaca, IDClasse, Poder)
+VALUES ('Thorin', 'Guerreiro anão.', '1965-08-20', 2, 2, 90);
+
+INSERT INTO Personagem
+(Nome, Descricao, DataNascimento, IDRaca, IDClasse, Poder)
+VALUES ('Arion', 'Mago humano.', '2000-03-15', 3, 3, 85);
+
+
+-- 6. Atualização de Dados
+
+UPDATE Classe
+SET Caracteristicas = 'Descrição não informada'
+WHERE Caracteristicas IS NULL;
