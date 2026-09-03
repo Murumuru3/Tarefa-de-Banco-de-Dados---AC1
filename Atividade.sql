@@ -36,3 +36,14 @@ SELECT IDClasse
 FROM Classe
 WHERE Nome = 'Guerreiro'
 );
+
+-- 8. Atualização de dados
+UPDATE Raca
+SET Descricao = 'Raca revisada pela guilda dos historiadores.',
+Origem = 'Terras Antigas'
+WHERE Origem = 'Terras Antigas do Norte';
+
+-- 9. Exclusão de Registros
+Delete FROM Personagem
+WHERE YEAR (Datadenascimento) >= 1970
+AND <= 1990;
