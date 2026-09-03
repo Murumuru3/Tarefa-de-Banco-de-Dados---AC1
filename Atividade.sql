@@ -127,10 +127,10 @@ WHERE Origem = 'Terras Antigas';
 
 --9 Exclusão de registros (1/2)
 DELETE FROM Personagem 
- WHERE YEAR (DataNascimento) > 1970
- AND YEAR (DataNascimento) < 2000;
+ WHERE YEAR (DataNascimento) >= 1970
+ AND YEAR (DataNascimento) <= 2000;
 
 -- 10. Exclusão de registros (2/2).
 delete from Personagem where IDClasse in (select IDClasse from Classe where IDHabilidade in (select IDHabilidade from Habilidade where MultiplicadorPoder < 3))
 delete from Classe where IDHabilidade in (select IDHabilidade from Habilidade where MultiplicadorPoder < 3)
-delete from Habilidade where MultiplicadorPoder < 3
+delete from Habilidade where MultiplicadorPoder < 2
