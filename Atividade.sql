@@ -36,13 +36,19 @@ VALUES ('Cura Mística', 4);
 
 -- Classe
 INSERT INTO Classe (Nome, Caracteristicas, IDHabilidade)
-VALUES ('Arqueiro', 'Especialista em ataques à distância.', 1);
+SELECT 'Arqueiro', 'Especialista em ataques à distância.', H.IDHabilidade
+FROM Habilidade H
+WHERE H.Nome = 'Visão Aguçada';
 
 INSERT INTO Classe (Nome, Caracteristicas, IDHabilidade)
-VALUES ('Guerreiro', 'Especialista em combate corpo a corpo.', 2);
+SELECT 'Guerreiro', 'Especialista em combate corpo a corpo.', H.IDHabilidade
+FROM Habilidade H
+WHERE H.Nome = 'Fúria';
 
 INSERT INTO Classe (Nome, Caracteristicas, IDHabilidade)
-VALUES ('Mago', 'Especialista em magia.', 3);
+SELECT 'Mago', 'Especialista em magia.', H.IDHabilidade
+FROM Habilidade H
+WHERE H.Nome = 'Cura Mística';
 
 
 -- Raça
